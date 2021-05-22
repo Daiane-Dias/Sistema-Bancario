@@ -1,0 +1,40 @@
+version: '3.3'
+
+services:
+   bancario:
+     image: mysql:5.7
+     volumes:
+       - /var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: abcd1234
+       MYSQL_DATABASE: banco
+       MYSQL_USER: root
+       MYSQL_PASSWORD: abcd1234
+
+   php:
+     depends_on:
+       - bancario
+     image: php:latest
+     ports:
+       - "80:80"
+       - "443:443"
+     restart: always
+     environment:
+       BANCARIO_HOST: bancario:3306
+       BANCARIO_USER: root
+       BANCARIO_PASSWORD: abcd1234
+
+   phpmyadmin:
+    depends_on:
+      - bancario
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 88:80
+    environment:
+      PMA_HOST: bancario:3306
+      MYSQL_ROOT_PASSWORD: abcd1234
+
+volumes:
+    db_data:

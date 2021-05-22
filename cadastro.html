@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>Cadastro Login</title>
+<meta content=width=device-with, initial-scale=1.0" name="viewport">
+<meta content="" name="Login em sistema bancario">
+<meta content="" name="Daiane Dias">
+<link rel="icon" href="img/favicon.png">
+<link rel="stylesheet" href="css/estilo.css">
+<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+
+<div class="container">
+<div class="box">
+
+<h1 align ="center">Cadastro Login</h1>
+
+<div class="form">
+<form  action="cadastro.php" method="post">
+<div class="espaco">
+<input type="text" class="" placeholder="login" name="login" id="Login">
+</div>
+<div class="espaco">
+<input type="password" class="" placeholder="senha" name="senha" id="senha" pattern="[A-z]{2}[a-z]{2}[0-9]{1}[!@#$%&*^\\/()]{1}">
+</div>
+<div class="espaco">
+    <select name="tipo" class="selecionar">
+        <option name="cliente" value="cliente">Cliente</option>
+        <option name="instituicao" value="instituicao">Instituicao</option>
+        </select>
+</div>
+<div class="espaco">
+<button type="submit" value="Cadastrar" id="Cadastrar" class="btn-branco">Cadastrar</button>
+</div>
+</form>
+</div>
+
+</div>
+<div>
+
+</body>
+</html>
